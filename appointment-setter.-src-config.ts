@@ -37,7 +37,7 @@ const envSchema = z.object({
 
   MAX_OUTREACH_PER_RUN: z.coerce.number().default(50),
   DRY_RUN: z.coerce.boolean().default(true),
-});
+ADMIN_API_KEY: z.string().min(16, "ADMIN_API_KEY must be at least 16 characters"),});
 
 const parsed = envSchema.safeParse(process.env);
 
